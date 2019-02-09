@@ -1,75 +1,149 @@
 {
   "extends": "tslint:recommended",
-  "rulesDirectory": [
-    "codelyzer"
-  ],
+  "rulesDirectory": ["codelyzer"],
+  "options": {
+    "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
+    "exclude": ["**/node_modules/**"]
+  },
   "rules": {
-    "array-type": false,
-    "arrow-parens": false,
+    "arrow-parens": false, // https://palantir.github.io/tslint/rules/arrow-parens/
     "deprecation": {
       "severity": "warn"
-    },
-    "import-blacklist": [
-      true,
-      "rxjs/Rx"
-    ],
-    "interface-name": false,
-    "max-classes-per-file": false,
-    "max-line-length": [
-      true,
-      140
-    ],
-    "member-access": false,
+    }, // https://palantir.github.io/tslint/rules/deprecation/
+    "import-blacklist": [true, "rxjs", "lodash"], // https://palantir.github.io/tslint/rules/import-blacklist/
+    "import-spacing": true, // https://palantir.github.io/tslint/rules/import-spacing/
+    "interface-over-type-literal": true, // https://palantir.github.io/tslint/rules/interface-over-type-literal/
+    "no-arg": true, // https://palantir.github.io/tslint/rules/no-arg/
+    "no-bitwise": true, // https://palantir.github.io/tslint/rules/no-bitwise/
+    "interface-name": [true, "never-prefix"], // https://palantir.github.io/tslint/rules/interface-name/
+    "label-position": true, // https://palantir.github.io/tslint/rules/label-position/
+    "jsdoc-format": [true, "check-multiline-start"], // https://palantir.github.io/tslint/rules/jsdoc-format/
+    "no-unnecessary-callback-wrapper": true, // https://palantir.github.io/tslint/rules/no-unnecessary-callback-wrapper/
+    "object-literal-key-quotes": [true, "as-needed"], // https://palantir.github.io/tslint/rules/object-literal-key-quotes/
+    "prefer-method-signature": true, // https://palantir.github.io/tslint/rules/prefer-method-signature/
+    "class-name": true, // https://palantir.github.io/tslint/rules/class-name/
+    "max-line-length": [true, 140], // https://palantir.github.io/tslint/rules/max-line-length/
+    "member-access": true, // https://palantir.github.io/tslint/rules/member-access/
     "member-ordering": [
       true,
       {
         "order": [
-          "static-field",
-          "instance-field",
-          "static-method",
-          "instance-method"
+          "public-static-field",
+          "protected-static-field",
+          "private-static-field",
+          "public-static-method",
+          "protected-static-method",
+          "private-static-method",
+          "public-instance-field",
+          "protected-instance-field",
+          "private-instance-field",
+          "public-constructor",
+          "protected-constructor",
+          "private-constructor",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
         ]
       }
-    ],
-    "no-consecutive-blank-lines": false,
-    "no-console": [
+    ], // https://palantir.github.io/tslint/rules/member-ordering/
+    "typedef": [
       true,
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace"
-    ],
-    "no-empty": false,
-    "no-inferrable-types": [
+      "call-signature",
+      "arrow-call-signature",
+      "parameter",
+      "arrow-parameter",
+      "property-declaration",
+      "variable-declaration",
+      "member-variable-declaration",
+      "object-destructuring",
+      "array-destructuring"
+    ], // https://palantir.github.io/tslint/rules/typedef/
+    "typedef-whitespace": [
       true,
-      "ignore-params"
-    ],
-    "no-non-null-assertion": true,
-    "no-redundant-jsdoc": true,
-    "no-switch-case-fall-through": true,
-    "no-use-before-declare": true,
-    "no-var-requires": false,
-    "object-literal-key-quotes": [
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      },
+      {
+        "call-signature": "onespace",
+        "index-signature": "onespace",
+        "parameter": "onespace",
+        "property-declaration": "onespace",
+        "variable-declaration": "onespace"
+      }
+    ], // https://palantir.github.io/tslint/rules/typedef-whitespace/
+    "whitespace": [
       true,
-      "as-needed"
-    ],
-    "object-literal-sort-keys": false,
-    "ordered-imports": false,
-    "quotemark": [
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-module",
+      "check-separator",
+      "check-type",
+      "check-typecast",
+      "check-preblock"
+    ], // https://palantir.github.io/tslint/rules/whitespace/
+    "curly": [true, "ignore-same-line"], // https://palantir.github.io/tslint/rules/curly/
+    "no-unused-variable": true, // https://palantir.github.io/tslint/rules/no-unused-variable/
+    "indent": [true, "spaces"], // https://palantir.github.io/tslint/rules/indent/
+    "no-null-keyword": true, // https://palantir.github.io/tslint/rules/no-null-keyword/
+    "linebreak-style": [true, "LF"], // https://palantir.github.io/tslint/rules/linebreak-style/
+    "max-classes-per-file": [true, 1], // https://palantir.github.io/tslint/rules/max-classes-per-file/
+    "array-type": [true, "generic"], // https://palantir.github.io/tslint/rules/array-type/
+    "max-file-line-count": [true, 400], // https://palantir.github.io/tslint/rules/max-file-line-count/
+    "no-duplicate-variable": [true, "check-parameters"], // https://palantir.github.io/tslint/rules/no-duplicate-variable/
+    "only-arrow-functions": [true], // https://palantir.github.io/tslint/rules/only-arrow-functions/
+    "no-consecutive-blank-lines": false, // https://palantir.github.io/tslint/rules/no-consecutive-blank-lines/
+    "no-console": [true, "debug", "info", "time", "timeEnd", "trace"], // https://palantir.github.io/tslint/rules/no-console/
+    "no-construct": true, // https://palantir.github.io/tslint/rules/no-construct/
+    "no-debugger": true, // https://palantir.github.io/tslint/rules/no-debugger/
+    "no-duplicate-super": true, // https://palantir.github.io/tslint/rules/no-duplicate-super/
+    "no-empty": false, // https://palantir.github.io/tslint/rules/no-empty/
+    "no-empty-interface": true, // https://palantir.github.io/tslint/rules/no-empty-interface/
+    "no-eval": true, // https://palantir.github.io/tslint/rules/no-eval/
+    "no-misused-new": true, // https://palantir.github.io/tslint/rules/no-misused-new/
+    "no-shadowed-variable": true, // https://palantir.github.io/tslint/rules/no-shadowed-variable/
+    "no-string-literal": false, // https://palantir.github.io/tslint/rules/no-string-literal/
+    "prefer-for-of": true, // https://palantir.github.io/tslint/rules/prefer-for-of/
+    "no-unnecessary-initializer": true, // https://palantir.github.io/tslint/rules/no-unnecessary-initializer/
+    "no-unused-expression": true, // https://palantir.github.io/tslint/rules/no-unused-expression/
+    "no-string-throw": true, // https://palantir.github.io/tslint/rules/no-string-throw/
+    "no-inferrable-types": [true, "ignore-params"], // https://palantir.github.io/tslint/rules/no-inferrable-types
+    "no-non-null-assertion": true, // https://palantir.github.io/tslint/rules/no-non-null-assertion/
+    "no-redundant-jsdoc": true, // https://palantir.github.io/tslint/rules/no-redundant-jsdoc
+    "no-switch-case-fall-through": true, // https://palantir.github.io/tslint/rules/no-switch-case-fall-through/
+    "no-use-before-declare": true, // https://palantir.github.io/tslint/rules/no-use-before-declare/
+    "no-var-requires": false, // https://palantir.github.io/tslint/rules/no-var-requires
+    "no-var-keyword": true, // https://palantir.github.io/tslint/rules/no-var-keyword/
+    "object-literal-sort-keys": false, // https://palantir.github.io/tslint/rules/object-literal-sort-keys/
+    "ordered-imports": false, // https://palantir.github.io/tslint/rules/ordered-imports/
+    "quotemark": [true, "double", "avoid-escape"], // https://palantir.github.io/tslint/rules/quotemark/
+    "semicolon": [true, "always"], // https://palantir.github.io/tslint/rules/semicolon/
+    "arrow-return-shorthand": true, // https://palantir.github.io/tslint/rules/arrow-return-shorthand/
+    "comment-format": [true, "check-space"], // https://palantir.github.io/tslint/rules/comment-format/
+    "eofline": true, // https://palantir.github.io/tslint/rules/eofline/
+    "trailing-comma": false, // https://palantir.github.io/tslint/rules/trailing-comma/
+    "no-output-on-prefix": true, // https://palantir.github.io/tslint/rules/no-output-on-prefix/
+    "use-input-property-decorator": true, // https://palantir.github.io/tslint/rules/use-input-property-decorator/
+    "use-output-property-decorator": true, // https://palantir.github.io/tslint/rules/use-output-property-decorator/
+    "use-host-property-decorator": true, // https://palantir.github.io/tslint/rules/use-host-property-decorator/
+    "no-input-rename": true, // https://palantir.github.io/tslint/rules/no-input-rename/
+    "no-output-rename": true, // https://palantir.github.io/tslint/rules/no-output-rename/
+    "use-life-cycle-interface": true, // https://palantir.github.io/tslint/rules/use-life-cycle-interface/
+    "use-pipe-transform-interface": true, // https://palantir.github.io/tslint/rules/use-pipe-transform-interface/
+    "component-class-suffix": true, // https://palantir.github.io/tslint/rules/component-class-suffix/
+    "directive-class-suffix": true, // https://palantir.github.io/tslint/rules/directive-class-suffix/
+    "variable-name": [true, "ban-keywords"], // https://palantir.github.io/tslint/rules/variable-name/
+    "unified-signatures": true, // https://palantir.github.io/tslint/rules/unified-signatures/
+    "one-line": [
       true,
-      "single"
-    ],
-    "trailing-comma": false,
-    "no-output-on-prefix": true,
-    "use-input-property-decorator": true,
-    "use-output-property-decorator": true,
-    "use-host-property-decorator": true,
-    "no-input-rename": true,
-    "no-output-rename": true,
-    "use-life-cycle-interface": true,
-    "use-pipe-transform-interface": true,
-    "component-class-suffix": true,
-    "directive-class-suffix": true
+      "check-open-brace",
+      "check-catch",
+      "check-else",
+      "check-whitespace"
+    ] // https://palantir.github.io/tslint/rules/one-line/
   }
 }
