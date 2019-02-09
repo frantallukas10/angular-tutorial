@@ -111,7 +111,6 @@
     "no-unnecessary-initializer": true, // https://palantir.github.io/tslint/rules/no-unnecessary-initializer/
     "no-unused-expression": true, // https://palantir.github.io/tslint/rules/no-unused-expression/
     "no-string-throw": true, // https://palantir.github.io/tslint/rules/no-string-throw/
-    "no-inferrable-types": [true, "ignore-params"], // https://palantir.github.io/tslint/rules/no-inferrable-types
     "no-non-null-assertion": true, // https://palantir.github.io/tslint/rules/no-non-null-assertion/
     "no-redundant-jsdoc": true, // https://palantir.github.io/tslint/rules/no-redundant-jsdoc
     "no-switch-case-fall-through": true, // https://palantir.github.io/tslint/rules/no-switch-case-fall-through/
@@ -120,7 +119,7 @@
     "no-var-keyword": true, // https://palantir.github.io/tslint/rules/no-var-keyword/
     "object-literal-sort-keys": false, // https://palantir.github.io/tslint/rules/object-literal-sort-keys/
     "ordered-imports": false, // https://palantir.github.io/tslint/rules/ordered-imports/
-    "quotemark": [true, "double", "avoid-escape"], // https://palantir.github.io/tslint/rules/quotemark/
+    "quotemark": [true, "single", "avoid-escape"], // https://palantir.github.io/tslint/rules/quotemark/
     "semicolon": [true, "always"], // https://palantir.github.io/tslint/rules/semicolon/
     "arrow-return-shorthand": true, // https://palantir.github.io/tslint/rules/arrow-return-shorthand/
     "comment-format": [true, "check-space"], // https://palantir.github.io/tslint/rules/comment-format/
