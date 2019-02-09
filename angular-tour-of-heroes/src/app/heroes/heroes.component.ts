@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
+  public hero: string = 'Windstorm';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  public ngOnInit(): void {}
 }
