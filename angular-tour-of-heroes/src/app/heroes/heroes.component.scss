@@ -1,0 +1,8 @@
+.heroes li {
+  cursor: pointer;
+
+  &.selected,
+  &:hover {
+    text-decoration: underline;
+  }
+}
