@@ -10,7 +10,7 @@
     "deprecation": {
       "severity": "warn"
     }, // https://palantir.github.io/tslint/rules/deprecation/
-    "import-blacklist": [true, "rxjs", "lodash"], // https://palantir.github.io/tslint/rules/import-blacklist/
+    // "import-blacklist": [true, "rxjs", "lodash"], // https://palantir.github.io/tslint/rules/import-blacklist/
     "import-spacing": true, // https://palantir.github.io/tslint/rules/import-spacing/
     "interface-over-type-literal": true, // https://palantir.github.io/tslint/rules/interface-over-type-literal/
     "no-arg": true, // https://palantir.github.io/tslint/rules/no-arg/
@@ -90,9 +90,9 @@
     "no-unused-variable": true, // https://palantir.github.io/tslint/rules/no-unused-variable/
     "indent": [true, "spaces"], // https://palantir.github.io/tslint/rules/indent/
     "no-null-keyword": true, // https://palantir.github.io/tslint/rules/no-null-keyword/
-    "linebreak-style": [true, "LF"], // https://palantir.github.io/tslint/rules/linebreak-style/
+    // "linebreak-style": [true, "LF"], // https://palantir.github.io/tslint/rules/linebreak-style/
     "max-classes-per-file": [true, 1], // https://palantir.github.io/tslint/rules/max-classes-per-file/
-    "array-type": [true, "generic"], // https://palantir.github.io/tslint/rules/array-type/
+    "array-type": [true, "array"], // https://palantir.github.io/tslint/rules/array-type/
     "max-file-line-count": [true, 400], // https://palantir.github.io/tslint/rules/max-file-line-count/
     "no-duplicate-variable": [true, "check-parameters"], // https://palantir.github.io/tslint/rules/no-duplicate-variable/
     "only-arrow-functions": [true], // https://palantir.github.io/tslint/rules/only-arrow-functions/

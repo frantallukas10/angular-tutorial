@@ -8,25 +8,36 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
-  public heroes: Array<Hero>;
-  public selectedHero: Hero;
-  constructor(private heroService: HeroService) {}
+  public heroes: Hero[];
 
-  public onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-  }
+  constructor(private heroService: HeroService) {}
 
   public ngOnInit(): void {
     this.getHeroes();
   }
 
-  // public getHeroes(): void {
-  //   this.heroes = this.heroService.getHeroes();
-  // }
-
-  public getHeroes(): void {
+  public getHeroes(): any {
     this.heroService
       .getHeroes()
-      .subscribe((heroes: Array<Hero>) => (this.heroes = heroes));
+      .subscribe((heroes: Hero[]) => (this.heroes = heroes));
+  }
+
+  public search(term: string): void {
+    /* TODO seraching https://angular.io/tutorial/toh-pt6 */
+  }
+
+  public add(name: string): void {
+    name = name.trim();
+    if (!name) {
+      return;
+    }
+    this.heroService.addHero({ name } as Hero).subscribe((hero: Hero) => {
+      this.heroes.push(hero);
+    });
+  }
+
+  public delete(hero: Hero): void {
+    this.heroes = this.heroes.filter((h: Hero) => h !== hero);
+    this.heroService.deleteHero(hero).subscribe();
   }
 }
