@@ -3,9 +3,9 @@ import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 
-const httpOptions = {
+const httpOptions: object = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 @Injectable({

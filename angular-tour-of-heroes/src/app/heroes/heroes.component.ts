@@ -16,18 +16,18 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  public getHeroes(): any {
+  public getHeroes(): void {
     this.heroService
       .getHeroes()
       .subscribe((heroes: Hero[]) => (this.heroes = heroes));
   }
 
   public search(term: string): void {
-    if (term === '') {
+    if (term.trim() === '') {
       this.getHeroes();
     } else {
       this.heroes = this.heroes.filter((h: Hero) =>
-        h.name.toUpperCase().includes(term.toUpperCase())
+        h.name.toUpperCase().includes(term.trim().toUpperCase())
       );
     }
   }
