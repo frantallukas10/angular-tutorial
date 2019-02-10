@@ -50,19 +50,8 @@ export class HeroService {
       .pipe(catchError(this.handleError<Hero>('deleteHero')));
   }
 
-  /* GET heroes whose name contains search term */
-  // public searchHeroes(term: string): Observable<Hero[]> {
-  //   if (!term.trim()) {
-  //     // if not search term, return empty hero array.
-  //     return of([]);
-  //   }
-  //   return this.http
-  //     .get<Hero[]>(`${this.heroesUrl}/?name=${term}`)
-  //     .pipe(catchError(this.handleError<Hero[]>('searchHeroes', [])));
-  // }
-
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
+  private handleError<T>(operation: string = 'operation', result?: T): any {
+    return (error: string): Observable<T> => {
       console.error(error);
       return of(result as T);
     };

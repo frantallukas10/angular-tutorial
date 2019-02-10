@@ -23,7 +23,13 @@ export class HeroesComponent implements OnInit {
   }
 
   public search(term: string): void {
-    /* TODO seraching https://angular.io/tutorial/toh-pt6 */
+    if (term === '') {
+      this.getHeroes();
+    } else {
+      this.heroes = this.heroes.filter((h: Hero) =>
+        h.name.toUpperCase().includes(term.toUpperCase())
+      );
+    }
   }
 
   public add(name: string): void {
